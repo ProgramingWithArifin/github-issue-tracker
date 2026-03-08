@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Issue Tracker | Login</title>
+    <!-- favicon setup -->
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+    <!-- font awsome setup  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font setup  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- tailwind and daisyui setup  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- custom css setup  -->
+
+</head>
+
+<body class="bg-base-300">
+    <section class="flex justify-center items-center flex-col gap-10 min-h-screen max-w-md bg-base-100 mx-auto py-4">
+        <div class="logo-container">
+            <img class="w-full max-w-sm" src="./assets/github-logo.png" alt="">
+        </div>
+        <div class="title">
+            <h2 class="text-2xl font-bold">GitHub Issues Tracker</h2>
+            <p class="text-sm text-center text-gray-600">Sign in to manage your issues</p>
+        </div>
+        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border">
+            <label class="label font-bold">Username</label>
+            <input type="text" class="input" placeholder="Enter Username" />
+            <span class="text-primary">Default:admin</span>
+            <label class="label font-bold">Enter Password</label>
+            <input type="password" class="input" placeholder="Password" />
+            <span class="text-primary">Default:admin123</span>
+            <button class="btn btn-primary mt-4">Sign In</button>
+        </fieldset>
+        <div class="flex items-center justify-center flex-col space-y-2">
+            <p class="text-gray-600">OR</p>
+            <p class="text-gray-500">Demo Credentials:</p>
+            <p><span class="font-bold">Username:</span> admin</p>
+            <p><span class="font-bold">Password:</span> admin123</p>
+        </div>
+    </section>
+</body>
+
+</html>
