@@ -22,9 +22,9 @@ const getPriorityClass = (priority) => {
     if (priority === "medium" || priority == "help wanted")
         return "badge-warning bg-amber-100";
     if (priority === "low" || priority === "enhancement")
-        return "badge-sucess bg-green-200";
+        return "badge-success bg-green-100";
     else {
-        return "badge-primary bg-violet-200";
+        return "badge-primary bg-violet-100";
     }
 };
 const statusImg = (status) => {
@@ -50,6 +50,12 @@ const toggleBtn = (id) => {
         displayIssues(allIssues.filter((issue) => issue.status === "closed"));
     counter();
 };
+const selectAll=(id)=>{
+    document.getElementById("all").classList.add("btn-outline");
+    document.getElementById("open").classList.add("btn-outline");
+    document.getElementById("closed").classList.add("btn-outline");
+    document.getElementById(id).classList.remove("btn-outline");
+}
 const statusBorder = (status) => {
     if (status === "open") return "border-t-8 border-green-600";
     if (status === "closed") return "border-t-8 border-violet-600";
@@ -76,10 +82,10 @@ const openModal = (issue) => {
                     <div class="flex flex-wrap gap-2 pb-2">
                         ${issue.labels.map((label,) => `<div class="badge badge-outline ${getPriorityClass(label)}">${label.toUpperCase()}</div>`,).join("")}
                     </div>
-                    <div class="text-gary600">${issue.description}</div>
+                    <div class="text-gray600">${issue.description}</div>
                     <div>
                         <h3 class="text-gray-600">Priority:</h3>
-                        <div class="badge badge-outline ${getPriorityClass(issue.priority)} font-bold">${issue.priority.toUpperCase()}</div>
+                        <div class="badge badge-outline font-bold ${getPriorityClass(issue.priority)} font-bold">${issue.priority.toUpperCase()}</div>
                     </div>
                     <div class="flex justify-around items-center flex-wrap">
                         <div>
@@ -102,7 +108,7 @@ const displayIssues = (issues) => {
         card.innerHTML = `<div class="min-w-[256px] bg-white p-4 rounded shadow-md gap-4 mx-auto h-full flex flex-col justify-between ${statusBorder(issue.status)}">
         <div class="flex justify-between ">
         <div><img src="${statusImg(issue.status)}" alt=""></div>
-        <div id="badge" class="badge badge-outline ${getPriorityClass(issue.priority)}">${issue.priority.toUpperCase()}</div>
+        <div id="badge" class="badge badge-outline font-bold ${getPriorityClass(issue.priority)}">${issue.priority.toUpperCase()}</div>
         </div>
         <div class='flex flex-col justify-between'>
         <h2 class="font-semibold text-[16px]">${issue.title}</h2>
@@ -124,6 +130,7 @@ const displayIssues = (issues) => {
     manageSpinner(false);
     counter();
 };
+
 document.getElementById("searchBtn").addEventListener("click", async () => {
     manageSpinner(true);
     const search = document.getElementById("searchInput").value.trim();
@@ -131,8 +138,7 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
     const res = await fetch(url);
     const data = await res.json();
     displayIssues(data.data);
-    toggleBtn("all");
+    selectAll("all");
 });
-
 loadIssues();
 toggleBtn("all");
