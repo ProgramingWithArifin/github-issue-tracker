@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <!-- favicon setup -->
     <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
     <!-- font awsome setup  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- font setup  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +21,36 @@
     <!-- custom css setup  -->
 
 </head>
+
 <body>
-    <h1 class="text-cyan-300">test</h1>
+    <header class="w-11/12 max-md:w-full mx-auto my-4">
+        <div class="navbar bg-base-100 shadow-sm">
+            <div class="flex-1">
+                <a class="text-2xl w-auto flex items-center font-semibold gap-1.5"><img class="w-[36px]"
+                        src="./assets/github-logo.png" alt=""><span>GitHub Issues Tracker</span></a>
+            </div>
+            <div class="flex gap-2">
+                <label class="input">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                            stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input type="search" required placeholder="Search issues..." />
+                </label>
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </header>
+    <main class="w-10/12 max-md:w-11/12 mx-auto my-4">
+        <section id="tab" class="my-5">
+            <button class="btn btn-outline btn-primary">All</button>
+            <button class="btn btn-outline btn-primary">Open</button>
+            <button class="btn btn-outline btn-primary">Closed</button>
+        </section>
+    </main>
 </body>
+
 </html>
